@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,7 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 50%, rgba(255, 51, 102, 0.1), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(51, 204, 255, 0.1), transparent 25%);
             display: flex;
@@ -35,7 +36,8 @@
             min-height: 100vh;
             color: var(--text-color);
             overflow: hidden;
-            perspective: 1000px; /* Essential for 3D effects */
+            perspective: 1000px;
+            /* Essential for 3D effects */
         }
 
         .form-container {
@@ -43,14 +45,14 @@
             padding: 40px;
             background: var(--surface-color);
             border-radius: 20px;
-            
+
             /* 3D Box Shadow for thickness */
-            box-shadow: 
+            box-shadow:
                 10px 10px 0 var(--shadow-color),
-                10px 10px 20px rgba(0,0,0,0.5),
+                10px 10px 20px rgba(0, 0, 0, 0.5),
                 inset 2px 2px 0 var(--highlight-color),
                 inset -2px -2px 0 var(--shadow-color);
-                
+
             /* 3D Transform */
             transform: rotateX(10deg) rotateY(-10deg);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -64,7 +66,8 @@
         .form-header {
             text-align: center;
             margin-bottom: 30px;
-            transform: translateZ(30px); /* Pops out of the card */
+            transform: translateZ(30px);
+            /* Pops out of the card */
         }
 
         .form-header h1 {
@@ -99,16 +102,16 @@
             color: var(--text-color);
             font-size: 1rem;
             outline: none;
-            
+
             /* Inset shadow to look carved in */
-            box-shadow: 
+            box-shadow:
                 inset 5px 5px 10px var(--shadow-color),
                 inset -5px -5px 10px var(--highlight-color);
             transition: all 0.3s ease;
         }
 
         .form-control:focus {
-            box-shadow: 
+            box-shadow:
                 inset 5px 5px 10px var(--shadow-color),
                 inset -5px -5px 10px var(--highlight-color),
                 0 0 10px rgba(255, 51, 102, 0.3);
@@ -127,25 +130,27 @@
             letter-spacing: 2px;
             cursor: pointer;
             outline: none;
-            
+
             /* Chunky 3D button */
-            box-shadow: 
+            box-shadow:
                 0 6px 0 var(--primary-dark),
-                0 15px 20px rgba(0,0,0,0.4),
-                inset 2px 2px 0 rgba(255,255,255,0.3);
-                
-            transform: translateZ(40px); /* Pops out significantly */
+                0 15px 20px rgba(0, 0, 0, 0.4),
+                inset 2px 2px 0 rgba(255, 255, 255, 0.3);
+
+            transform: translateZ(40px);
+            /* Pops out significantly */
             transition: all 0.1s ease;
             position: relative;
             top: 0;
         }
 
         .submit-btn:active {
-            top: 6px; /* Moves down to cover the dark shadow */
-            box-shadow: 
+            top: 6px;
+            /* Moves down to cover the dark shadow */
+            box-shadow:
                 0 0px 0 var(--primary-dark),
-                0 5px 10px rgba(0,0,0,0.4),
-                inset 2px 2px 0 rgba(255,255,255,0.3);
+                0 5px 10px rgba(0, 0, 0, 0.4),
+                inset 2px 2px 0 rgba(255, 255, 255, 0.3);
             transform: translateZ(34px);
         }
 
@@ -156,9 +161,9 @@
             height: 60px;
             background: rgba(51, 204, 255, 0.8);
             border-radius: 10px;
-            box-shadow: 
+            box-shadow:
                 10px 10px 0 #1882a8,
-                inset 2px 2px 0 rgba(255,255,255,0.5);
+                inset 2px 2px 0 rgba(255, 255, 255, 0.5);
             z-index: -1;
             animation: float 6s ease-in-out infinite;
         }
@@ -175,23 +180,27 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 204, 51, 0.8);
-            box-shadow: 
+            box-shadow:
                 8px 8px 0 #cc9900,
-                inset 2px 2px 0 rgba(255,255,255,0.5);
+                inset 2px 2px 0 rgba(255, 255, 255, 0.5);
             animation-delay: -3s;
             transform: rotateZ(-25deg) rotateX(30deg) translateZ(-80px);
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotateZ(45deg) rotateX(20deg) translateZ(-50px);
             }
+
             50% {
                 transform: translateY(-20px) rotateZ(50deg) rotateX(30deg) translateZ(-30px);
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="cube cube1"></div>
@@ -199,8 +208,15 @@
 
     <style>
         @keyframes float2 {
-            0%, 100% { transform: translateY(0) rotateZ(-25deg) rotateX(30deg) translateZ(-80px); }
-            50% { transform: translateY(-15px) rotateZ(-15deg) rotateX(20deg) translateZ(-60px); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotateZ(-25deg) rotateX(30deg) translateZ(-80px);
+            }
+
+            50% {
+                transform: translateY(-15px) rotateZ(-15deg) rotateX(20deg) translateZ(-60px);
+            }
         }
     </style>
 
@@ -211,7 +227,8 @@
         <form onsubmit="event.preventDefault(); alert('Logged in!');">
             <div class="form-group">
                 <label for="username">USERNAME</label>
-                <input type="text" id="username" class="form-control" placeholder="Enter your username" autocomplete="off" required>
+                <input type="text" id="username" class="form-control" placeholder="Enter your username"
+                    autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="password">PASSWORD</label>
@@ -224,14 +241,14 @@
     <script>
         // Optional: Interactive 3D tilt effect on mousemove
         const container = document.querySelector('.form-container');
-        
+
         document.addEventListener('mousemove', (e) => {
             // Only apply when the card is hovered so it doesn't conflict with the hover transition
             if (!container.matches(':hover')) return;
 
             const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
             const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            
+
             container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateZ(20px)`;
         });
 
@@ -241,4 +258,5 @@
         });
     </script>
 </body>
+
 </html>

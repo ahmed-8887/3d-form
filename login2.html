@@ -207,13 +207,13 @@
             <h2>Welcome Back</h2>
             <p>Please enter your details</p>
         </div>
-        <form onsubmit="event.preventDefault(); alert('Login Successful!');">
+        <form action="login_process.php" method="POST">
             <div class="input-group">
-                <input type="text" id="email" required autocomplete="off">
+                <input type="email" id="email" name="email" required autocomplete="off">
                 <label for="email">Email address</label>
             </div>
             <div class="input-group">
-                <input type="password" id="pass" required>
+                <input type="password" id="pass" name="password" required>
                 <label for="pass">Password</label>
             </div>
             <button type="submit" class="btn-submit">Sign In</button>
